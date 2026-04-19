@@ -1,0 +1,281 @@
+<?xml version="1.0"?>
+
+<robot name="spider">
+
+    <link name="base">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="5.0"/>
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="meshes/Base.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="red">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="meshes/Base.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+
+    <!-- THIGH LINKS -->
+    <link name="thigh1">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="meshes/Thigh.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="blue">
+                <color rgba="0.0 0.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="meshes/Thigh.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="thigh2">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="meshes/Thigh.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="blue">
+                <color rgba="0.0 0.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="meshes/Thigh.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="thigh3">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="meshes/Thigh.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="blue">
+                <color rgba="0.0 0.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="meshes/Thigh.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="thigh4">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="meshes/Thigh.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="blue">
+                <color rgba="0.0 0.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="meshes/Thigh.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+    
+    <!-- THIGH JOINTS -->
+    <joint name="thigh_joint_1" type="revolute">
+        <origin xyz="0.03816  -0.04816  0.01000" rpy="0.0 1.57 -0.785"/>
+        <parent link="base"/>
+        <child link="thigh1"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-1.57" upper="1.57" effort="5.0" velocity="1.0"/>
+    </joint>
+    <joint name="thigh_joint_2" type="revolute">
+        <origin xyz="-0.03816  -0.04816  0.01000" rpy="0.0 -1.57 0.785"/>
+        <parent link="base"/>
+        <child link="thigh2"/>
+        <axis xyz="0 -1 0"/>
+        <limit lower="-1.57" upper="1.57" effort="5.0" velocity="1.0"/>
+    </joint>
+    <joint name="thigh_joint_3" type="revolute">
+        <origin xyz="-0.03816  0.04816  0.01000" rpy="0.0 1.57 2.355"/>
+        <parent link="base"/>
+        <child link="thigh3"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-1.57" upper="1.57" effort="5.0" velocity="1.0"/>
+    </joint>
+    <joint name="thigh_joint_4" type="revolute">
+        <origin xyz="0.03816  0.04816  0.01000" rpy="0.0 -1.57 -2.355"/>
+        <parent link="base"/>
+        <child link="thigh4"/>
+        <axis xyz="0 -1 0"/>
+        <limit lower="-1.57" upper="1.57" effort="5.0" velocity="1.0"/>
+    </joint>
+
+    <!-- SHIN LINKS -->
+    <link name="shin1">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="1" ixy="1" ixz="1" iyy="1" iyz="1" izz="1"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="meshes/Shin.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="green">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="meshes/Shin.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="shin2">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="1" ixy="1" ixz="1" iyy="1" iyz="1" izz="1"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="meshes/Shin.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="green">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="meshes/Shin.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="shin3">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="1" ixy="1" ixz="1" iyy="1" iyz="1" izz="1"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="meshes/Shin.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="green">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="meshes/Shin.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="shin4">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="1" ixy="1" ixz="1" iyy="1" iyz="1" izz="1"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="meshes/Shin.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="green">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="meshes/Shin.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!-- SHIN JOINTS -->
+    
+    <joint name="shin_joint_1" type="revolute">
+        <origin xyz="0.0  0.0  0.04" rpy="0.0 0.0 0.0"/>
+        <parent link="thigh1"/>
+        <child link="shin1"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="0.0" upper="3.14" effort="5.0" velocity="1.0"/>
+    </joint>
+    <joint name="shin_joint_2" type="revolute">
+        <origin xyz="0.0  0.0  0.04" rpy="0.0 0.0 0.0"/>
+        <parent link="thigh2"/>
+        <child link="shin2"/>
+        <axis xyz="0 -1 0"/>
+        <limit lower="0.0" upper="3.14" effort="5.0" velocity="1.0"/>
+    </joint>
+    <joint name="shin_joint_3" type="revolute">
+        <origin xyz="0.0  0.0  0.04" rpy="0.0 0.0 0.0"/>
+        <parent link="thigh3"/>
+        <child link="shin3"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="0.0" upper="3.14" effort="5.0" velocity="1.0"/>
+    </joint>
+    <joint name="shin_joint_4" type="revolute">
+        <origin xyz="0.0  0.0  0.04" rpy="0.0 0.0 0.0"/>
+        <parent link="thigh4"/>
+        <child link="shin4"/>
+        <axis xyz="0 -1 0"/>
+        <limit lower="0.0" upper="3.14" effort="5.0" velocity="1.0"/>
+    </joint>
+
+
+
+</robot>
